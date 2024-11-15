@@ -1,0 +1,5 @@
+docker run --name livraria-db -p 5433:5432 -e POSTGRES_PASSWORD=root -e POSTGRES_USER=root -e POSTGRES_DB=livraria --network livraria-network postgres:16.3 
+
+docker run --name pgadmin4 -p 15432:80 -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=admin --network livraria-network dpage/pgadmin4
+
+docker network create livraria-network
